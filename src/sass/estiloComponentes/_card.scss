@@ -1,0 +1,19 @@
+.contador{
+    display: flex;
+
+    .contador_simbol {
+        border: 2px solid  #c6b497;
+        padding: 0em 0.5em;
+        margin: 0.5em
+    }
+    p {
+        align-self: center;
+    }
+}
+
+.addCarrito {
+    color: white;
+    background-color: #c6b497;
+        padding: 0.5em;
+        margin: 0.5em
+}

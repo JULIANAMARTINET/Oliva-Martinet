@@ -1,15 +1,15 @@
+
 import NavBar from "./NavBar";
 import ItemListContainer from "./ItemListContainer";
 
-function Home(){
+function App(){
+
     return (
         <>
           <NavBar />  
-          <ItemListContainer
-                  greeting={"OLIVA"}
-                />
+          <ItemListContainer greeting={"OLIVA"} />
     </> 
     )
   }
 
-  export default Home;
+  export default App;

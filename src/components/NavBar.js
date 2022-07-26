@@ -1,6 +1,7 @@
 import Bolsa from "./CartWidget";
 
-const NavBar = () => {
+const NavBar = ({contador}) => {
+  contador = 10
   // let Links = [
   //   { name: "Sobre Oliva", link: "/" },
   //   { name: "Tienda", link: "/" },
