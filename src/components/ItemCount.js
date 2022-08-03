@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-function Contador({ stock, initial, onAdd }) {
+
+function Contador({ stock, initial, onAdd}) {
   const [contador, setCounter] = useState(initial);
 
   const sumarContador = () => {
@@ -16,8 +17,12 @@ function Contador({ stock, initial, onAdd }) {
     if (contador > initial) {
       const aux = contador - 1;
       setCounter(aux);
-    }
+    }  
   };
+
+  const confirmar = () => {
+    console.log("onAdd")
+  }
 
   return (
     <>
@@ -31,7 +36,7 @@ function Contador({ stock, initial, onAdd }) {
             -
           </button>
         </div>
-        <button className="addCarrito">Añadir al Carrito</button>
+        <button className="addCarrito" onClick={confirmar}>Añadir al Carrito</button>
       </div>
     </>
   );

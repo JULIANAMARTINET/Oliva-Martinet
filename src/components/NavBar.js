@@ -1,12 +1,12 @@
 import Bolsa from "./CartWidget";
 
 const NavBar = () => {
-  // let Links = [
-  //   { name: "Sobre Oliva", link: "/" },
-  //   { name: "Tienda", link: "/" },
-  //   { name: "Contacto", link: "/" },
-  // ];
-  // let [open,setOpen]=useState(false);
+  const Links = [
+    { name: "Sobre Oliva", link: "/" },
+    { name: "Tienda", link: "/" },
+    { name: "Contacto", link: "/" },
+  ];
+  //  let [open,setOpen]=useState(false);
   return (
     <div className="md:flex items-center justify-between py-4 md:px-10 px-7 navbar">
       <div
@@ -22,23 +22,16 @@ const NavBar = () => {
       <ul
         className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in'}`}
       >
+        {Links.map((link) => (
+          <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+            <a
+              href={link.link}
+              className="text-gray-800 hover:text-gray-400 duration-500"
+            >{link.name}</a>
+          </li>
+        ))}
         <li className="md:ml-8 text-xl md:my-0 my-7">
-          <a href="" className="text-gray-800 hover:text-gray-400 duration-500">
-            Sobre Oliva
-          </a>
-        </li>
-        <li className="md:ml-8 text-xl md:my-0 my-7">
-          <a href="" className="text-gray-800 hover:text-gray-400 duration-500">
-            Tienda
-          </a>
-        </li>
-        <li className="md:ml-8 text-xl md:my-0 my-7">
-          <a href="" className="text-gray-800 hover:text-gray-400 duration-500">
-            Contacto
-          </a>
-        </li>
-        <li className="md:ml-8 text-xl md:my-0 my-7">
-          <a href="" className="text-gray-800 hover:text-gray-400 duration-500">
+          <a href="*" className="text-gray-800 hover:text-gray-400 duration-500">
             <Bolsa />
           </a>
         </li>
