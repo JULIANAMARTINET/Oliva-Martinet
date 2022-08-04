@@ -7,7 +7,7 @@ function App(){
     return (
         <>
           <NavBar />  
-          <ItemListContainer greeting={"OLIVA"} />
+          <ItemListContainer greeting={"./img/logoPrincipal.png"} />
     </> 
     )
   }

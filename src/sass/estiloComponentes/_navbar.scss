@@ -1,9 +1,12 @@
 
 .navbar{
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(49, 48, 48, 0.788);
+    position: sticky;
+    top: 0;
+    background-color: #ebebdb;
 
     .logo{
-        width: 60%;
+        width: 50%;
     }
     .bolsa_icono {
         width: 25px;

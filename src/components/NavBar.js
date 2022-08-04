@@ -8,7 +8,7 @@ const NavBar = () => {
   ];
   //  let [open,setOpen]=useState(false);
   return (
-    <div className="md:flex items-center justify-between py-4 md:px-10 px-7 navbar">
+    <div className="md:flex items-center justify-between py-2 md:px-10 px-7 navbar">
       <div
         className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
       text-gray-800"

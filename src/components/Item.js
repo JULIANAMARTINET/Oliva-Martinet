@@ -1,12 +1,12 @@
 
 const Item = ({productos}) => {
   return (
-      <div className="">
+        <div className="card">
           <img src={productos.img} alt="producto" />
           <p>{productos.nombre}</p>
           <p>$ {productos.precio}</p>
           <button>Ver detalle</button>
-      </div>
+        </div>
   )}
 
 export default Item;

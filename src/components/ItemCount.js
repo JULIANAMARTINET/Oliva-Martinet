@@ -26,7 +26,7 @@ function Contador({ stock, initial, onAdd}) {
 
   return (
     <>
-      <div className="Card">
+      <div>
         <div className="contador">
           <button className="contador_simbol" onClick={sumarContador}>
             +
