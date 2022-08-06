@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "cat":"textil",
+        "nombre":"Mantel",
+        "precio":4500,
+        "img":"./img/manteles.png",
+        "detalle": "Manteles lino 100% algodón.",
+        "medida": "130 x 180 cm - 130 x 230 cm"
+    },
+    {
+        "id":2,
+        "cat":"almohada",
+        "nombre":"Almohadones",
+        "precio":2000,
+        "img":"./img/almohadon.png",
+        "detalle": "Con semillas de lavanda y aceite esencial de romero, confeccionadas con tela de algodón teñidas a mano.",
+        "medida": "Medida: 15x25"
+    },
+    {
+        "id":3,
+        "cat":"textil",
+        "nombre":"Mantas",
+        "precio":3000,
+        "img":"./img/mantas.png",
+        "detalle": "Con semillas de lavanda y aceite esencial de romero, confeccionadas con tela de algodón teñidas a mano.",
+        "medida": "Medida: 15x25"
+    },
+    {
+        "id":4,
+        "cat":"almohada",
+        "nombre":"Almohaditas de semillas",
+        "precio":1500,
+        "img":"./img/bolsitas.png",
+        "detalle": "Con semillas de lavanda y aceite esencial de romero, confeccionadas con tela de algodón teñidas a mano.",
+        "medida": "Medida: 15x25"
+    }
+]

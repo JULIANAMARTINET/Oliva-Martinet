@@ -1,0 +1,50 @@
+.itemDetailContainer {
+
+    .card-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2em;
+        max-width: 72em;
+        margin: auto;
+
+        h3 {
+            font-size: 3em;
+            font-weight: 200;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+
+            .column {
+                margin: 2em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 100%;
+                }
+
+                .text-detail {
+                    padding: 1em 5em;
+                    text-align: center;
+                }
+
+                .medida-detail {
+                    text-align: center;
+                    padding: 1em;
+                }
+
+                button {
+                    color: white;
+                    background-color: #c6b497;
+                    padding: 0.3em 1.5em;
+                    margin: 0.5em;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
