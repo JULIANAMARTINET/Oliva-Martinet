@@ -1,38 +1,83 @@
-[
+ [
     {
         "id":1,
-        "cat":"textil",
+        "cat":"textiles",
         "nombre":"Mantel",
         "precio":4500,
         "img":"./img/manteles.png",
         "detalle": "Manteles lino 100% algodón.",
-        "medida": "130 x 180 cm - 130 x 230 cm"
+        "medida": "130 x 180 cm - 130 x 230 cm",
+        "type": "no"
     },
     {
         "id":2,
-        "cat":"almohada",
-        "nombre":"Almohadones",
-        "precio":2000,
-        "img":"./img/almohadon.png",
-        "detalle": "Con semillas de lavanda y aceite esencial de romero, confeccionadas con tela de algodón teñidas a mano.",
-        "medida": "Medida: 15x25"
-    },
-    {
-        "id":3,
-        "cat":"textil",
+        "cat":"textiles",
         "nombre":"Mantas",
         "precio":3000,
         "img":"./img/mantas.png",
-        "detalle": "Con semillas de lavanda y aceite esencial de romero, confeccionadas con tela de algodón teñidas a mano.",
-        "medida": "Medida: 15x25"
+        "detalle": "Manta 100% algodón confeccionada a mano. Ideal como pie de cama, o manta para sillón.",
+        "medida": "Medida: 140x200 cm",
+        "type": "no"
+    },
+    {
+        "id":3,
+        "cat":"textiles",
+        "nombre":"Camino de mesa",
+        "precio":2600,
+        "img":"./img/caminoMesa.png",
+        "detalle": "Camino de mesa de gasa 100% algodón. Disponible en color crudo.",
+        "medida": "Medida: 240x50 cm",
+        "type": "si"
     },
     {
         "id":4,
-        "cat":"almohada",
+        "cat":"almohadones",
+        "nombre":"Almohadones",
+        "precio":2000,
+        "img":"./img/almohadon.png",
+        "detalle": "Almohadones confeccionados a mano, 100% algodón con relleno de vellon siliconado.",
+        "medida": "Medida: 45x45 cm",
+        "type": "si"
+    },
+    {
+        "id":5,
+        "cat":"almohadones",
+        "nombre":"Almohadones rectangulares",
+        "precio":2500,
+        "img":"./img/almohadonRectangular.png",
+        "detalle": "Almohadones confeccionados a mano, 100% algodón. Material: gasa de algodón.",
+        "medida": "Medida: 40x70 cm",
+        "type": "no"
+    },
+    {
+        "id":6,
+        "cat":"ptextiles",
         "nombre":"Almohaditas de semillas",
         "precio":1500,
         "img":"./img/bolsitas.png",
         "detalle": "Con semillas de lavanda y aceite esencial de romero, confeccionadas con tela de algodón teñidas a mano.",
-        "medida": "Medida: 15x25"
+        "medida": "Medida: 15x25 cm",
+        "type": "no"
+    },
+    {
+        "id":7,
+        "cat":"ptextiles",
+        "nombre":"Plato de sitio",
+        "precio":900,
+        "img":"./img/platoSitio.png",
+        "detalle": "Plato de sitio confeccionado de cuerda 100% algodón color crudo, ideal para usar como plato de sitio/individual o centro de mesa",
+        "medida": "Medida: 30x36 cm",
+        "type": "no"
+    },
+    {
+        "id":8,
+        "cat":"ptextiles",
+        "nombre":"Canasto",
+        "precio":2500,
+        "img":"./img/canasto.png",
+        "detalle": "Canasto confeccionado de cuerda 100% algodón color crudo, ideal como panera, porta huevos o frutera.",
+        "medida": "Medida: base 17 cm x 19 cm de altura",
+        "type": "si"
     }
+    
 ]

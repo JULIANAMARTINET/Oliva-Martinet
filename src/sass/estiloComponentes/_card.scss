@@ -1,25 +1,20 @@
-.card-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    max-width: 82em;
-    margin: auto;
 
     .card {
-        justify-items: center;
-        padding: 1em;
-        margin: 1em;
-
+        margin-bottom: 2em;
+    
         img {
             border-radius: 10px;
+            width: 250px;
+            margin-bottom: 1em;
         }
-
-        button {
+        p{
+            padding-bottom: 0.4em;
+           }
+        .button {
             color: white;
             background-color: #c6b497;
             padding: 0.3em 1.5em;
-            margin: 0.5em;
+            margin-top: 1em;
             border-radius: 5px;
         }
     }
-}

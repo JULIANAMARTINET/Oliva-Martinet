@@ -1,15 +1,36 @@
-
-.navbar{
+.navbar {
     box-shadow: 0 0.5rem 1rem rgba(49, 48, 48, 0.788);
     position: sticky;
     top: 0;
     background-color: #ebebdb;
 
-    .logo{
+    .logo {
         width: 50%;
     }
+
     .bolsa_icono {
         width: 25px;
         height: 25px;
     }
+
+    .menu li:hover .dropDown {
+        display: block;
+    }
+
+        .dropDown {
+            display: none;
+            z-index: 1;
+            width: 300%;
+            background-color: #ebebdb;
+
+            .itemCat {
+                display: block;
+                width: 110%;
+                :hover {
+                    background-color: #c6b497;
+                    
+                }
+            }
+        }
+    
 }

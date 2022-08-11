@@ -1,24 +1,22 @@
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
-  const [detail, setDetail ]= useState([]);
+  const [detail, setDetail] = useState({});
+ const {id} = useParams();
 
-
-useEffect(() => {
+  useEffect(() => {
     fetch("./Api/productos.json")
-       .then((res) => res.json())
-       .then(res => 
-        setDetail(res.find(productos => productos.id === 1)))
-    }, [] );
+      .then((res) => res.json())
+      .then(res => setDetail(res.find(productos => productos.id === id)));
+  }, [id] );
 
   return (
     <div className="itemDetailContainer">
-        <ItemDetail detail={detail}/>
+      <ItemDetail detail={detail} />
     </div>
   );
 }
 
 export default ItemDetailContainer;
-
-    
