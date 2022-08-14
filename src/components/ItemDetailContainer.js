@@ -7,12 +7,12 @@ function ItemDetailContainer() {
  const {id} = useParams();
 
   useEffect(() => {
-    fetch("./Api/productos.json")
+    fetch("https://mocki.io/v1/ec7f9bb7-9402-4a09-a305-5c7ad4d95b45")
       .then((res) => res.json())
-      .then(res => setDetail(res.find(productos => productos.id === id)));
+      .then(res => setDetail(res.find(productos => productos.id === Number(id)))); 
   }, [id] );
 
-  return (
+  return (  
     <div className="itemDetailContainer">
       <ItemDetail detail={detail} />
     </div>

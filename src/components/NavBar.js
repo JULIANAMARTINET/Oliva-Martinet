@@ -15,7 +15,7 @@ const NavBar = ({ type }) => {
             <Link to="/">
               <img
                 className="logo"
-                src="./img/logo.png"
+                src="/img/logo.png"
                 alt="logo oliva"
               />
             </Link>

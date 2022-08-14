@@ -9,17 +9,17 @@ function ItemListContainer() {
   const {id} = useParams()
 
 useEffect(() => {
-    fetch("./Api/productos.json")
+    fetch("https://mocki.io/v1/ec7f9bb7-9402-4a09-a305-5c7ad4d95b45")
        .then((res) => res.json())
        .then(data => { 
        if(id){
         setListProductos(data.filter(item=>item.cat === id))
-        console.log(data)
     }else{
         setListProductos(data)
     }
   })
 },[id])
+
  
   return (
     <div className="itemListCont">
@@ -29,3 +29,4 @@ useEffect(() => {
 }
 
 export default ItemListContainer;
+

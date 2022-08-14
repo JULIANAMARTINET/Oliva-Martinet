@@ -6,7 +6,7 @@
       <>
          <div className="portada">
               <h2>TEXTILES HECHOS A MANO</h2>
-              <img src={"./img/logoPrincipal.png"} alt="" />
+              <img src={"/img/logoPrincipal.png"} alt="" />
               <p>ENVIOS A TODO EL PAIS</p>
          </div>
          { <ItemListContainer /> }
