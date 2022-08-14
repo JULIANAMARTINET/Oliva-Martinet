@@ -9,7 +9,7 @@ function ItemListContainer() {
   const {id} = useParams()
 
 useEffect(() => {
-    fetch("https://mocki.io/v1/ec7f9bb7-9402-4a09-a305-5c7ad4d95b45")
+    fetch("https://mocki.io/v1/3e524c38-eee1-4a45-8f2a-a81169c6b04a")
        .then((res) => res.json())
        .then(data => { 
        if(id){
