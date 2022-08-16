@@ -1,9 +1,9 @@
 # OLIVA HOME
 
-Oliva es un proyecto que nace del deseo de crear. Las texturas, los colores y el oficio se funden para darle vida y realzar los espacios que nos rodean.
+Oliva es un proyecto que nace del deseo de realzar los espacios que nos rodean y darle vida. Ofrece productos de telas 100% algodón, sensibles al tacto, que no necesitan planchado.
 
-¿En que nos destacamos?
+Link del proyecto https://oliva-martinet.vercel.app/
 
-Elegimos usar telas de algodón, sensibles al tacto, que no necesitan planchado. Esto le confiere una especial calidez a los espacios, creando ambientes más relajados. 
+El e-commerce cuenta con una portada principal donde se muestran los productos destacados y desde el Navbar en item TIENDA podras ver todos los productos o incluso navegar por categorias. Ademas se muestra el detalle de cada producto desde el boton ver detalle y la posibilidad de agregarlo al carrito (cantidades según stock)
 
-Ademas innovamos en teñir las telas con tintes naturales, como la cáscara de cebolla o de palta, logrando reutilizar los desperdicios y dándole un color hermoso al textil. Al teñir con plantas, extraes el corazón de ellas, por lo que al usarlas, lo llevas siempre contigo. Dicen que propicia felicidad y protección a quien lo lleve, y doy fe de eso. Es indescriptible la magia que se crea al teñir con ellos. 
+Desde el icono de BOLSA, en el margen superior izquierdo, podras ver los productos del carrito y realizar desde ahi la compra de los productos.
