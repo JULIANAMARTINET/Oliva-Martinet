@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"
 
 
 function Contador({ stock, initial, onAdd}) {
@@ -20,8 +21,8 @@ function Contador({ stock, initial, onAdd}) {
     }  
   };
 
-  const confirmar = () => {
-    console.log("onAdd")
+  const agregarCarrito = () => {
+    onAdd(contador)
   }
 
   return (
@@ -36,7 +37,7 @@ function Contador({ stock, initial, onAdd}) {
             -
           </button>
         </div>
-        <button className="addCarrito" onClick={confirmar}>Añadir al Carrito</button>
+        <button className="addCarrito" onClick={agregarCarrito}> <Link to="/cart" >Añadir al Carrito</Link> </button>
       </div>
     </>
   );

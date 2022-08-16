@@ -1,6 +1,11 @@
 import Contador from "./ItemCount";
+import { useState } from "react"
 
 const ItemDetail = ({ detail }) => {
+  const [numero, setNumero] = useState(0)
+  const onAdd = (num) => {
+    setNumero(numero)
+  }
   return (
     <section className="card-detail">
       <h3>{detail.nombre}</h3>
@@ -15,7 +20,7 @@ const ItemDetail = ({ detail }) => {
             {detail.medida}
           </p>
           <p>$ {detail.precio}</p>
-          <Contador stock={5} initial={1} onAdd={2} />
+          <Contador stock={5} initial={1} onAdd={onAdd} />
         </div>
       </div>
     </section>
