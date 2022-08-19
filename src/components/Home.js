@@ -1,4 +1,4 @@
- import ItemListContainer from "./ItemListContainer";
+ import ItemListContainer from "../containers/ItemListContainer";
 
   const Home = () => {
 

@@ -1,11 +1,17 @@
 import Contador from "./ItemCount";
-import { useState } from "react"
+import {CartContext} from "../context/CartContext"
+import {useContext, useState} from "react"
 
 const ItemDetail = ({ detail }) => {
-  const [numero, setNumero] = useState(0)
-  const onAdd = (num) => {
-    setNumero(numero)
+
+  const [cantidad, setCantidad] = useState(1)
+  const {estaEnBolsa, agregarItem} = useContext(CartContext)
+
+  const onAdd = () => {
+    estaEnBolsa(detail.id)
+    agregarItem(detail, cantidad)
   }
+
   return (
     <section className="card-detail">
       <h3>{detail.nombre}</h3>
@@ -20,7 +26,7 @@ const ItemDetail = ({ detail }) => {
             {detail.medida}
           </p>
           <p>$ {detail.precio}</p>
-          <Contador stock={5} initial={1} onAdd={onAdd} />
+          <Contador stock={5} initial={1}  cantidad={cantidad} setCantidad={setCantidad} onAdd={onAdd} />
         </div>
       </div>
     </section>

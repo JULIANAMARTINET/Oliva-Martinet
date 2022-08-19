@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = ({ type }) => {
  
-  //  let [open,setOpen]=useState(false);
+ 
   return (
     <div className="md:flex items-center justify-between py-2 md:px-10 px-7 navbar">
       <div

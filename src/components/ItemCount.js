@@ -22,7 +22,7 @@ function Contador({ stock, initial, onAdd}) {
   };
 
   const agregarCarrito = () => {
-    onAdd(contador)
+    onAdd()
   }
 
   return (
