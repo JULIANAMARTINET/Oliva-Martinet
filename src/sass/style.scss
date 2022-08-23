@@ -1,8 +1,11 @@
 @import "base/body";
+@import "base/common";
 @import "estiloComponentes/navbar";
 @import "estiloComponentes/footer";
-@import "estiloComponentes/card";
+@import "estiloComponentes/item";
 @import "estiloComponentes/contador";
 @import "estiloComponentes/itemListCont";
 @import "estiloComponentes/home";
-@import "estiloComponentes/itemDetailCont"
+@import "estiloComponentes/itemDetailCont";
+@import "estiloComponentes/carrito";
+@import "estiloComponentes/checkout";

@@ -1,29 +1,20 @@
-import { useState } from "react";
-import { Link } from "react-router-dom"
+import React from "react";
 
 
-function Contador({ stock, initial, onAdd}) {
-  const [contador, setCounter] = useState(initial);
+function Contador({ stock, setCantidad, onAdd, cantidad}) {
+
 
   const sumarContador = () => {
-    if (contador < stock) {
-      const aux = contador + 1;
-      setCounter(aux);
-    } else {
-      console.log("No more stock");
-    }
-  };
+    if (cantidad < stock) {
+      setCantidad(cantidad + 1)
+  }
+}
 
   const restarContador = () => {
-    if (contador > initial) {
-      const aux = contador - 1;
-      setCounter(aux);
-    }  
-  };
-
-  const agregarCarrito = () => {
-    onAdd()
+    if (cantidad > 1) {
+      setCantidad(cantidad - 1)
   }
+}
 
   return (
     <>
@@ -32,12 +23,12 @@ function Contador({ stock, initial, onAdd}) {
           <button className="contador_simbol" onClick={sumarContador}>
             +
           </button>
-          <p> cant: {contador}</p>
+          <p> cant: {cantidad}</p>
           <button className="contador_simbol" onClick={restarContador}>
             -
           </button>
         </div>
-        <button className="addCarrito" onClick={agregarCarrito}> <Link to="/cart" >Añadir al Carrito</Link> </button>
+        <button className="addCarrito" onClick={() => {onAdd()}}> Añadir al Carrito </button>
       </div>
     </>
   );

@@ -5,12 +5,13 @@ import Footer from "./components/Footer";
 import ItemListContainer from "./containers/ItemListContainer";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 import Cart from "./components/Cart";
-import MyPRovider from "./context/CartContext";
+import MyProvider from "./context/CartContext";
+import { Checkout } from "./components/Checkout";
 
 function App() {
   return (
     <BrowserRouter>
-      <MyPRovider>
+      <MyProvider>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -18,9 +19,10 @@ function App() {
           <Route path="/cat/:id" element={<ItemListContainer />} />
           <Route path="/detail/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes> 
         <Footer />
-      </MyPRovider>
+      </MyProvider>
     </BrowserRouter>
   );
 }

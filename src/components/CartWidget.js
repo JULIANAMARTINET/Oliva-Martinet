@@ -1,21 +1,18 @@
-import { useContext } from "react"
-import { Link } from "react-router-dom"
-import { CartContext } from "../context/CartContext";
+import { useCarrito } from "../context/CartContext";
+import { Badge } from '@mui/material'
 
 const Bolsa = () => {
 
-  const {cantUn} = useContext(CartContext)
-  
+  const {cantUn} = useCarrito()
 
     return (
-      <>
-      <Link to="/cart">
+   <div>
+       <Badge badgeContent={cantUn()} color="primary">
          <span>
            <img className="bolsa_icono" src="/icono/bolsa-compras.png" alt="bolsa de compras" />
          </span>
-         {cantUn()}
-         </Link>
-      </>
+         </Badge>
+         </div>
     );
   }
   

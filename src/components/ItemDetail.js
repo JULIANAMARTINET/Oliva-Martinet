@@ -1,11 +1,11 @@
 import Contador from "./ItemCount";
-import {CartContext} from "../context/CartContext"
-import {useContext, useState} from "react"
+import { useCarrito } from "../context/CartContext";
+import {useState} from "react"
 
 const ItemDetail = ({ detail }) => {
 
   const [cantidad, setCantidad] = useState(1)
-  const {estaEnBolsa, agregarItem} = useContext(CartContext)
+  const {estaEnBolsa, agregarItem} = useCarrito()
 
   const onAdd = () => {
     estaEnBolsa(detail.id)
@@ -26,7 +26,7 @@ const ItemDetail = ({ detail }) => {
             {detail.medida}
           </p>
           <p>$ {detail.precio}</p>
-          <Contador stock={5} initial={1}  cantidad={cantidad} setCantidad={setCantidad} onAdd={onAdd} />
+          <Contador stock={5} cantidad={cantidad} setCantidad={setCantidad} onAdd={onAdd} />
         </div>
       </div>
     </section>

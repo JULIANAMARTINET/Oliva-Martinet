@@ -1,0 +1,52 @@
+.containerCarrito {
+    max-width: 60em;
+    margin: auto;
+
+    .titCarrito{
+        font-size: 3em;
+        font-weight: 300;
+        text-align: center;
+        margin: 1em;
+    }
+.cart {
+    margin: 1em;
+    border-radius: 10px;
+    border: 1px solid rgb(117, 112, 112);
+    padding: 1em 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .imgCarrito{
+        padding: 1em;
+        width: 150px
+    }
+    .titItem{
+        font-size: 1.8em;
+        font-weight: 300;
+        text-align: center;
+        margin: 0.8em;
+        border-bottom: 1px solid rgb(117, 112, 112);
+    }
+    p{
+        text-align: center;
+    }
+}
+.precioTotal{
+        font-size: 1.8em;
+        font-weight: 300;
+        text-align: end;
+        margin: 0.8em;
+        border-bottom: 1px solid rgb(117, 112, 112);
+
+}
+
+.botonesCarrito{
+    display: flex;
+    justify-content: center
+
+}
+.button{
+    @extend %boton;    
+   }
+}
