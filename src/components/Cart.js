@@ -1,5 +1,7 @@
 import { useCarrito } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import { db }  from "../firebase"
+import { collection, getDoc, doc} from "firebase/firestore"
 
 function Cart() {
   const { cart, eliminarItem, vaciarBolsa, precioTotal } = useCarrito();

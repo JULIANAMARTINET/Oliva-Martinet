@@ -28,7 +28,7 @@ function Contador({ stock, setCantidad, onAdd, cantidad}) {
             -
           </button>
         </div>
-        <button className="addCarrito" onClick={() => {onAdd()}}> Añadir al Carrito </button>
+        <button className="addCarrito" onClick={() => {onAdd()}} > Añadir al Carrito </button>
       </div>
     </>
   );

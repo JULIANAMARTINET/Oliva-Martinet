@@ -1,15 +1,26 @@
 import ItemDetail from "../components/ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { db }  from "../firebase"
+import { collection, getDoc, doc} from "firebase/firestore"
 
 function ItemDetailContainer() {
   const [detail, setDetail] = useState({});
  const {id} = useParams();
 
   useEffect(() => {
-    fetch("https://mocki.io/v1/3e524c38-eee1-4a45-8f2a-a81169c6b04a")
-      .then((res) => res.json())
-      .then(res => setDetail(res.find(productos => productos.id === Number(id)))); 
+   const productosCollection = collection(db, "productos")
+   const referencia = doc(productosCollection, id)
+   const consulta = getDoc(referencia)
+
+     consulta
+      .then(res => {
+        setDetail(res.data())
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+
   }, [id] );
 
   return (  

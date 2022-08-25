@@ -1,23 +1,33 @@
 import ItemList from "../components/ItemList";
 import { useState, useEffect } from "react";
 import {useParams} from 'react-router-dom'  
+import { db}  from "../firebase"
+import { collection, getDocs, query, where,} from "firebase/firestore"
 
 
 function ItemListContainer() {
 
   const [listProductos, setListProductos] = useState([]);
   const {id} = useParams()
-
+  
 useEffect(() => {
-    fetch("https://mocki.io/v1/3e524c38-eee1-4a45-8f2a-a81169c6b04a")
-       .then((res) => res.json())
-       .then(data => { 
-       if(id){
-        setListProductos(data.filter(item=>item.cat === id))
-    }else{
-        setListProductos(data)
-    }
-  })
+  const productosCollection = collection(db, "productos")
+  const filtro = query(productosCollection, where("cat","==",id))
+  const consulta = getDocs(filtro)
+
+  consulta
+       .then(res => { 
+         const productos = res.docs.map(doc=>{
+           return {
+             ...doc.data(),
+             id: doc.id
+           }
+          })
+          setListProductos(productos)
+       })
+       .catch(err=>{
+         console.log(err)
+       })
 },[id])
 
  

@@ -38,6 +38,7 @@
 }
 .container_envio{
     text-align: center;
+    margin: 2em 2em 4em 2em;
 
     .tit_envio{
         font-size: 2em;
@@ -46,12 +47,15 @@
     
     .detalle_envio{
         text-align: center;
-        margin: 1em 2em 4em 2em;
+        margin: 1em;
 
         h4{
             font-size: 1.5em;
             margin-bottom: 0.4em;
         }
+    }
+    .button {
+        @extend %boton
     }
 
 }

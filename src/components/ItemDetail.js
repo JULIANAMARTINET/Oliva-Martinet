@@ -1,16 +1,32 @@
 import Contador from "./ItemCount";
 import { useCarrito } from "../context/CartContext";
 import {useState} from "react"
+import Swal from 'sweetalert2'
+
 
 const ItemDetail = ({ detail }) => {
 
   const [cantidad, setCantidad] = useState(1)
   const {estaEnBolsa, agregarItem} = useCarrito()
 
+  const alert = () => {
+  
+    Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: `Se agrego "${detail.nombre}" a tu bolsa de compras`,
+      showConfirmButton: false,
+      timer: 2000
+    })
+  }
+  
+
   const onAdd = () => {
     estaEnBolsa(detail.id)
-    agregarItem(detail, cantidad)
+    agregarItem(detail, cantidad);
+    alert()
   }
+
 
   return (
     <section className="card-detail">

@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {useState} from "react"
 import { useCarrito } from "../context/CartContext";
 
@@ -15,9 +15,7 @@ export const Checkout = () => {
   )
 
   const [submit, setSubmit] = useState(false)
-
-  const { cart, precioTotal } = useCarrito();
-
+  const { cart, precioTotal, vaciarBolsa} = useCarrito();
   const navigate = useNavigate();
 
   const handlerChangeInput = (e) => {
@@ -36,12 +34,31 @@ export const Checkout = () => {
        }
          setSubmit(true)
          console.log(orden)
+         vaciarBolsa()
   }
 
-  if (cart.length === 0) {
-    setTimeout(() => {
-      navigate("/");
-    }, 4000);
+  if ((cart.length === 0) && (submit)) {
+    
+     return (
+             <div className="container_envio">
+                 <h3 className="tit_envio">Su orden fue cargada con exito! </h3>
+                 <p>Revise su casilla de correo {cliente.email}, para proceder al pago.</p>
+                 <div className="detalle_envio">
+                    <h4>Detalle de compra:</h4>
+                    <p>Nombre: {cliente.nombre}</p>
+                    <p>Apellido: {cliente.apellido}</p>
+                    <p>Dirreccion de envio: {cliente.direccion}</p>
+                    <p>Monto a pagar: ${precioTotal()}</p>
+                 </div>
+                 <Link to="/"><button className="button">Volver a la Home</button></Link>
+            </div>
+           )}
+
+  else if (cart.length === 0) {
+           setTimeout(() => {
+            navigate("/");
+          }, 4000);
+      
     return (
       <div>
         <h1>No hay productos en carrito</h1>
@@ -50,6 +67,8 @@ export const Checkout = () => {
     );
   }
 
+
+else {
   return (
     <div className="containerCheckout">
       <h2 className="tit_checkout">Datos de Facturación y Envío</h2>
@@ -80,22 +99,9 @@ export const Checkout = () => {
            </div>
            <button type="submit" className="button">Confirmar Compra</button>
       </form>
-      <hr />
-         {
-          submit && <div className="container_envio">
-                       <h3 className="tit_envio">Su orden fue cargada con exito! </h3>
-                       <p>Revise su casilla de correo {cliente.email}, para proceder al pago.</p>
-                       <div className="detalle_envio">
-                          <h4>Detalle de compra:</h4>
-                          <p>Nombre: {cliente.nombre}</p>
-                          <p>Apellido: {cliente.apellido}</p>
-                          <p>Dirreccion de envio: {cliente.direccion}</p>
-                          <p>Monto a pagar: ${precioTotal()}</p>
-                       </div>
-                    </div>
-        }
     </div>
   );
 };
+}
 
 export default Checkout
