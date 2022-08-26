@@ -6,29 +6,49 @@ import { collection, getDocs, query, where,} from "firebase/firestore"
 
 
 function ItemListContainer() {
-
-  const [listProductos, setListProductos] = useState([]);
+ const [listProductos, setListProductos] = useState([]);
   const {id} = useParams()
   
 useEffect(() => {
-  const productosCollection = collection(db, "productos")
-  const filtro = query(productosCollection, where("cat","==",id))
-  const consulta = getDocs(filtro)
+  if(!id){
+    const productosCollection = collection(db, "productos")
+    const consulta = getDocs(productosCollection)
 
-  consulta
-       .then(res => { 
-         const productos = res.docs.map(doc=>{
-           return {
-             ...doc.data(),
-             id: doc.id
-           }
-          })
-          setListProductos(productos)
-       })
-       .catch(err=>{
-         console.log(err)
-       })
-},[id])
+    consulta
+    .then(res => {
+        const productos = res.docs.map(doc=>{
+            return {
+                ...doc.data(),
+                id: doc.id
+            }
+        })
+        setListProductos(productos)
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+}else{
+    const productosCollection = collection(db, "productos")
+    const filtro = query(productosCollection,
+        where("cat", "==", `${id}`))
+        // where("stock",">",5))
+    const consulta = getDocs(filtro)
+
+    consulta
+    .then(res=>{
+        const productos = res.docs.map(doc=>{
+            return {
+                ...doc.data(),
+                id: doc.id
+            }
+        })
+        setListProductos(productos)
+    })
+    .catch(err=>{
+console.log(err)
+    })
+}
+}, [id])
 
  
   return (
