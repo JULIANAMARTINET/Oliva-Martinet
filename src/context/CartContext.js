@@ -10,6 +10,8 @@ export const useCarrito = () => {
 const MyProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+  
+
   const estaEnBolsa = (id) => {
     return cart.some((x) => x.id === id);
   };

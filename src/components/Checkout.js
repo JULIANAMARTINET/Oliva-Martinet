@@ -2,8 +2,14 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import {useState} from "react"
 import { useCarrito } from "../context/CartContext";
+import { db }  from "../firebase"
+import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 
 export const Checkout = () => {
+
+  const [submit, setSubmit] = useState(false)
+  const { cart, precioTotal, vaciarBolsa} = useCarrito();
+  const navigate = useNavigate();
 
   const [cliente, setCliente] = useState({
       nombre: "",
@@ -14,10 +20,6 @@ export const Checkout = () => {
   }
   )
 
-  const [submit, setSubmit] = useState(false)
-  const { cart, precioTotal, vaciarBolsa} = useCarrito();
-  const navigate = useNavigate();
-
   const handlerChangeInput = (e) => {
       setCliente({
           ...cliente,
@@ -27,14 +29,25 @@ export const Checkout = () => {
 
   const handlerSubmit = (e) => {
        e.preventDefault()
+
        const orden = {
            items: cart,
+           precio: precioTotal(),
            comprador: {...cliente},
-           precio: precioTotal()
+           date: serverTimestamp(),
        }
+       const orderCollection = collection(db, " order")
+       const consulta = addDoc(orderCollection, orden)
+
          setSubmit(true)
-         console.log(orden)
          vaciarBolsa()
+         consulta 
+         .then(res => {
+           console.log(res.id)
+         })
+         .catch(err => {
+           console.log(err)
+         })
   }
 
   if ((cart.length === 0) && (submit)) {
@@ -66,7 +79,6 @@ export const Checkout = () => {
       </div>
     );
   }
-
 
 else {
   return (
