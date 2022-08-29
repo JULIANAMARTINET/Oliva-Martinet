@@ -8,7 +8,7 @@ function Cart() {
   if (cart.length > 0) {
     return (
       <div className="containerCarrito">
-        <h2 className="titCarrito">Mi Bolsa</h2>
+        <h2 className="titCarrito">Mi Bolsa de compras</h2>
          {cart.map((element, index) => {
             return (
              <article key={index} className="cart">
@@ -41,12 +41,13 @@ function Cart() {
   }
 
   return (
-    <div>
-      <h1>Bolsa de compras</h1>
-      <Link to="/">
-        <button>Volver a la home</button>
-      </Link>
-    </div>
+        <div className="containerCarrito">
+            <h2 className="titCarrito">Mi Bolsa de compras</h2>
+            <p>Aún no agregaste productos.</p>
+            <Link to="/">
+                <button className="button">Volver a la home</button>
+            </Link>
+      </div>
   );
 }
 

@@ -10,7 +10,6 @@ const ItemDetail = ({ detail }) => {
   const {estaEnBolsa, agregarItem} = useCarrito()
 
   const alert = () => {
-  
     Swal.fire({
       position: 'top-center',
       icon: 'success',
@@ -20,13 +19,11 @@ const ItemDetail = ({ detail }) => {
     })
   }
   
-
   const onAdd = () => {
     estaEnBolsa(detail.id)
     agregarItem(detail, cantidad);
     alert()
   }
-
 
   return (
     <section className="card-detail">

@@ -10,8 +10,6 @@ export const useCarrito = () => {
 const MyProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  
-
   const estaEnBolsa = (id) => {
     return cart.some((x) => x.id === id);
   };
@@ -26,7 +24,7 @@ const MyProvider = ({ children }) => {
       const productoIndex = cart.indexOf(findProducto);
       const auxArray = [...cart];
       auxArray[productoIndex].cantidad += cantidad;
-      setCart(auxArray);
+      setCart(auxArray)
     } else {
       setCart([...cart, newItem]);
     }

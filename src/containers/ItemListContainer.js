@@ -1,62 +1,51 @@
 import ItemList from "../components/ItemList";
 import { useState, useEffect } from "react";
-import {useParams} from 'react-router-dom'  
-import { db}  from "../firebase"
-import { collection, getDocs, query, where,} from "firebase/firestore"
-
+import { CircularProgress } from "@mui/material";
+import { useParams } from "react-router-dom";
+import { db } from "../firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 function ItemListContainer() {
- const [listProductos, setListProductos] = useState([]);
-  const {id} = useParams()
-  
-useEffect(() => {
-  if(!id){
-    const productosCollection = collection(db, "productos")
-    const consulta = getDocs(productosCollection)
+  const [listProductos, setListProductos] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { id } = useParams();
 
-    consulta
-    .then(res => {
-        const productos = res.docs.map(doc=>{
-            return {
-                ...doc.data(),
-                id: doc.id
-            }
-        })
-        setListProductos(productos)
-    })
-    .catch(err=>{
+  useEffect(() => {
+    const consulta = () => {
+        const productosCollection = collection(db, "productos");
+        const filtro = query(productosCollection, where("cat", "==", `${id}`));
+      // where("stock",">",5))
+
+      if (!id) {
+        return productosCollection;
+      } else {
+        return filtro;
+      }
+    }
+
+    getDocs(consulta())
+      .then((res) => {
+        const productos = res.docs.map((doc) => {
+          return {
+            ...doc.data(),
+            id: doc.id,
+          }
+        });
+        setListProductos(productos);
+        setLoading(true);
+      })
+      .catch((err) => {
         console.log(err)
-    })
-}else{
-    const productosCollection = collection(db, "productos")
-    const filtro = query(productosCollection,
-        where("cat", "==", `${id}`))
-        // where("stock",">",5))
-    const consulta = getDocs(filtro)
+      });
+  }, [id])
 
-    consulta
-    .then(res=>{
-        const productos = res.docs.map(doc=>{
-            return {
-                ...doc.data(),
-                id: doc.id
-            }
-        })
-        setListProductos(productos)
-    })
-    .catch(err=>{
-console.log(err)
-    })
-}
-}, [id])
-
- 
   return (
     <div className="itemListCont">
-      <ItemList listProductos={listProductos} />
+      {!loading && <CircularProgress color="inherit" />}
+
+      {loading && <ItemList listProductos={listProductos} />}
     </div>
   );
 }
 
 export default ItemListContainer;
-

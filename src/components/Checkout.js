@@ -17,8 +17,7 @@ export const Checkout = () => {
       tel: "",
       email: "",
       direccion: ""
-  }
-  )
+  })
 
   const handlerChangeInput = (e) => {
       setCliente({
@@ -29,7 +28,6 @@ export const Checkout = () => {
 
   const handlerSubmit = (e) => {
        e.preventDefault()
-
        const orden = {
            items: cart,
            precio: precioTotal(),
@@ -40,7 +38,6 @@ export const Checkout = () => {
        const consulta = addDoc(orderCollection, orden)
 
          setSubmit(true)
-         vaciarBolsa()
          consulta 
          .then(res => {
            console.log(res.id)
@@ -48,12 +45,13 @@ export const Checkout = () => {
          .catch(err => {
            console.log(err)
          })
+         vaciarBolsa()
   }
 
   if ((cart.length === 0) && (submit)) {
     
      return (
-             <div className="container_envio">
+             <div className="container_envio"> 
                  <h3 className="tit_envio">Su orden fue cargada con exito! </h3>
                  <p>Revise su casilla de correo {cliente.email}, para proceder al pago.</p>
                  <div className="detalle_envio">
@@ -65,6 +63,7 @@ export const Checkout = () => {
                  </div>
                  <Link to="/"><button className="button">Volver a la Home</button></Link>
             </div>
+            
            )}
 
   else if (cart.length === 0) {
@@ -112,8 +111,6 @@ else {
            <button type="submit" className="button">Confirmar Compra</button>
       </form>
     </div>
-  );
-};
-}
+  )}}
 
 export default Checkout
