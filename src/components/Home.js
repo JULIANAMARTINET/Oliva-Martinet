@@ -2,6 +2,7 @@
 
   const Home = () => {
 
+
   return (
       <>
          <div className="portada">
@@ -9,7 +10,8 @@
               <img src={"/img/logoPrincipal.png"} alt="" />
               <p>ENVIOS A TODO EL PAIS</p>
          </div>
-         { <ItemListContainer /> }
+         <h2 className="titHome">PRODUCTOS DESTACADOS</h2>
+         { <ItemListContainer type="home"/> }
     </>
   );
 };

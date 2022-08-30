@@ -8,6 +8,7 @@ import Cart from "./components/Cart";
 import MyProvider from "./context/CartContext";
 import { Checkout } from "./components/Checkout";
 import "./firebase"
+import Aboutus from "./components/Aboutus";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/tienda/" element={<ItemListContainer />} />
           <Route path="/cat/:id" element={<ItemListContainer />} />
           <Route path="/detail/:id" element={<ItemDetailContainer />} />

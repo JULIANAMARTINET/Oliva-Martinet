@@ -1,0 +1,43 @@
+.containerAbout {
+    display: flex;
+    max-width: 82em;
+    margin: auto;
+    padding-top: 3em;
+
+    .detailAbout {
+        margin: 1em;
+
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            font-weight: 200;
+        }
+
+        .row {
+            display: flex;
+            padding: 2em;
+
+            .col1 {
+                padding: 1em;
+                border-right: 1px solid gray;
+            }
+
+            .col2 {
+                padding: 1em;
+            }
+
+            .textAbout {
+                padding: 1em;
+                font-weight: 200;
+            }
+        }
+    }
+
+    .imgAbout {
+        margin: 1em;
+
+        img {
+            border-radius: 5px;
+        }
+    }
+}

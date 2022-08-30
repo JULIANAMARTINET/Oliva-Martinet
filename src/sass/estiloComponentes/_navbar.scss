@@ -3,6 +3,11 @@
     position: sticky;
     top: 0;
     background-color: #ebebdb;
+    padding: 0.5em;
+   
+    .textNavbar{ 
+        max-width: 76em;
+        margin: auto;
 
     .logo {
         width: 50%;
@@ -35,5 +40,6 @@
                 }
             }
         }
+    }
     
 }

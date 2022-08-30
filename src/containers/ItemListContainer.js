@@ -5,7 +5,8 @@ import { useParams } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
-function ItemListContainer() {
+function ItemListContainer({type}) {
+
   const [listProductos, setListProductos] = useState([]);
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
@@ -14,11 +15,15 @@ function ItemListContainer() {
     const consulta = () => {
         const productosCollection = collection(db, "productos");
         const filtro = query(productosCollection, where("cat", "==", `${id}`));
+        const destacados = query(productosCollection, where("type", "==", "si"));
       // where("stock",">",5))
 
       if (!id) {
-        return productosCollection;
-      } else {
+        return productosCollection
+      }
+      else if ({type}) { return destacados
+      }
+      else {
         return filtro;
       }
     }
@@ -29,6 +34,7 @@ function ItemListContainer() {
           return {
             ...doc.data(),
             id: doc.id,
+            type: doc.type,
           }
         });
         setListProductos(productos);
@@ -37,7 +43,7 @@ function ItemListContainer() {
       .catch((err) => {
         console.log(err)
       });
-  }, [id])
+  }, [id, type])
 
   return (
     <div className="itemListCont">
