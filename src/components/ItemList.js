@@ -10,7 +10,6 @@ import Item from "./Item";
       )}
       </div>
     </section>
-  );
-};
+  )}
 
 export default ItemList;
