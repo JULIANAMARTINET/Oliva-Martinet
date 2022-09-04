@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
-function ItemListContainer({type}) {
+function ItemListContainer() {
 
   const [listProductos, setListProductos] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -16,12 +16,9 @@ function ItemListContainer({type}) {
         const productosCollection = collection(db, "productos");
         const filtro = query(productosCollection, where("cat", "==", `${id}`));
         const destacados = query(productosCollection, where("type", "==", "si"));
-      // where("stock",">",5))
-
+    
       if (!id) {
-        return productosCollection
-      }
-      else if ({type}) { return destacados
+        return destacados
       }
       else {
         return filtro;
@@ -34,7 +31,6 @@ function ItemListContainer({type}) {
           return {
             ...doc.data(),
             id: doc.id,
-            type: doc.type,
           }
         });
         setListProductos(productos);
@@ -43,12 +39,11 @@ function ItemListContainer({type}) {
       .catch((err) => {
         console.log(err)
       });
-  }, [id, type])
+  }, [id])
 
   return (
     <div className="itemListCont">
       {!loading && <CircularProgress color="inherit" />}
-
       {loading && <ItemList listProductos={listProductos} />}
     </div>
   );
