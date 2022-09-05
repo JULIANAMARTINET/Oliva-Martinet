@@ -1,6 +1,7 @@
 import ItemList from "../components/ItemList";
 import { useState, useEffect } from "react";
 import { CircularProgress } from "@mui/material";
+import { toast } from 'react-toastify';
 import { useParams } from "react-router-dom";
 import { db } from "../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
@@ -14,14 +15,17 @@ function ItemListContainer() {
   useEffect(() => {
     const consulta = () => {
         const productosCollection = collection(db, "productos");
-        const filtro = query(productosCollection, where("cat", "==", `${id}`));
+        const categoria = query(productosCollection, where("cat", "==", `${id}`));
         const destacados = query(productosCollection, where("type", "==", "si"));
     
       if (!id) {
         return destacados
       }
+      else if (id === "tienda"){
+        return productosCollection
+      }
       else {
-        return filtro;
+        return categoria;
       }
     }
 
@@ -37,7 +41,9 @@ function ItemListContainer() {
         setLoading(true);
       })
       .catch((err) => {
-        console.log(err)
+        toast.error('Se produjo un error, intenta mas tarde', {
+          position: "top-right",
+          });
       });
   }, [id])
 

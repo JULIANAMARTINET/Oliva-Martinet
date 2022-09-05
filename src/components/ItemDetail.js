@@ -1,8 +1,7 @@
 import Contador from "./ItemCount";
 import { useCarrito } from "../context/CartContext";
 import {useState} from "react"
-import Swal from 'sweetalert2'
-
+import { toast } from 'react-toastify';
 
 const ItemDetail = ({ detail }) => {
 
@@ -10,13 +9,15 @@ const ItemDetail = ({ detail }) => {
   const {estaEnBolsa, agregarItem} = useCarrito()
 
   const alert = () => {
-    Swal.fire({
-      position: 'top-center',
-      icon: 'success',
-      title: `Se agrego "${detail.nombre}" a tu bolsa de compras`,
-      showConfirmButton: false,
-      timer: 2000
-    })
+    toast.success(`Se agrego "${detail.nombre}" a tu bolsa de compras`,{
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
   }
   
   const onAdd = () => {
@@ -26,19 +27,18 @@ const ItemDetail = ({ detail }) => {
   }
 
   return (
-    <section className="card-detail">
+    <section className="cardDetail">
       <h3>{detail.nombre}</h3>
       <div className="row">
-        <div className="column">
+        <div className="column lg:w-1/2 md:w-2/2">
           <img src={detail.img} alt="producto" />
         </div>
-        <div className="column">
-          <p className="text-detail">{detail.detalle}</p>
-          <p className="medida-detail">
-            Medidas <br />
-            {detail.medida}
+        <div className="column lg:w-1/2 md:w-2/2">
+          <p className="textDetail">{detail.detalle}</p>
+          <p className="medidaDetail">
+            Medidas {detail.medida}
           </p>
-          <p>$ {detail.precio}</p>
+          <p className="precioDetail">$ {detail.precio}</p>
           <Contador stock={5} cantidad={cantidad} setCantidad={setCantidad} onAdd={onAdd} />
         </div>
       </div>

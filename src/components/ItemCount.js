@@ -1,8 +1,6 @@
 import React from "react";
 
-
 function Contador({ stock, setCantidad, onAdd, cantidad}) {
-
 
   const sumarContador = () => {
     if (cantidad < stock) {
@@ -17,8 +15,7 @@ function Contador({ stock, setCantidad, onAdd, cantidad}) {
 }
 
   return (
-    <>
-      <div>
+      <div className="containerCount">
         <div className="contador">
           <button className="contador_simbol" onClick={sumarContador}>
             +
@@ -30,7 +27,6 @@ function Contador({ stock, setCantidad, onAdd, cantidad}) {
         </div>
         <button className="addCarrito" onClick={() => {onAdd()}} > Añadir al Carrito </button>
       </div>
-    </>
   );
 }
 

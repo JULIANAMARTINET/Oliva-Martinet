@@ -2,12 +2,14 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import {useState} from "react"
 import { useCarrito } from "../context/CartContext";
+import { toast } from 'react-toastify';
 import { db }  from "../firebase"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 
 export const Checkout = () => {
 
   const [submit, setSubmit] = useState(false)
+  const [orderId, setOrderId] = useState()
   const { cart, precioTotal, vaciarBolsa} = useCarrito();
   const navigate = useNavigate();
 
@@ -40,10 +42,12 @@ export const Checkout = () => {
          setSubmit(true)
          consulta 
          .then(res => {
-           console.log(res.id)
+           setOrderId(res.id)
          })
          .catch(err => {
-           console.log(err)
+          toast.error('Se produjo un error, intenta mas tarde', {
+            position: "top-right",
+            });
          })
          vaciarBolsa()
   }
@@ -51,19 +55,19 @@ export const Checkout = () => {
   if ((cart.length === 0) && (submit)) {
     
      return (
-             <div className="container_envio"> 
-                 <h3 className="tit_envio">Su orden fue cargada con exito! </h3>
+             <div className="containerEnvio"> 
+                 <h3 className="titEnvio">Su orden fue cargada con exito! </h3>
                  <p>Revise su casilla de correo {cliente.email}, para proceder al pago.</p>
-                 <div className="detalle_envio">
+                 <div className="detalleEnvio">
                     <h4>Detalle de compra:</h4>
+                    <p>Numero de orden: {orderId}</p> 
                     <p>Nombre: {cliente.nombre}</p>
                     <p>Apellido: {cliente.apellido}</p>
                     <p>Dirreccion de envio: {cliente.direccion}</p>
-                    <p>Monto a pagar: ${precioTotal()}</p>
+                    <p>Monto a pagar: ${precioTotal()}</p> 
                  </div>
                  <Link to="/"><button className="button">Volver a la Home</button></Link>
             </div>
-            
            )}
 
   else if (cart.length === 0) {
@@ -82,29 +86,29 @@ export const Checkout = () => {
 else {
   return (
     <div className="containerCheckout">
-      <h2 className="tit_checkout">Datos de Facturación y Envío</h2>
+      <h2 className="titCheckout">Datos de Facturación y Envío</h2>
       <form onSubmit={handlerSubmit} className="form">
-            <div className="row_form">
-                <div className="item_form">
+            <div className="rowForm">
+                <div className="itemForm">
                    <h3>Nombre</h3>
                    <input name="nombre" value={cliente.nombre} onChange={handlerChangeInput}/>
                 </div>
-                <div className="item_form">
+                <div className="itemForm">
                    <h3>Apellido</h3>
                    <input name="apellido" value={cliente.apellido} onChange={handlerChangeInput}/>
                 </div>
             </div>
-            <div className="row_form">
-                <div className="item_form">
+            <div className="rowForm">
+                <div className="itemForm">
                    <h3>Telefono</h3>
                    <input name="tel" value={cliente.tel} onChange={handlerChangeInput}/>
                 </div>
-                <div className="item_form">
+                <div className="itemForm">
                    <h3>Email</h3>
                    <input placeholder="ej: maria@gmail.com" name="email" value={cliente.email} onChange={handlerChangeInput}/>
                 </div>
            </div>
-           <div>
+           <div className="itemForm">
                <h3>Dirección de envío</h3>
                <input name="direccion" value={cliente.direccion} onChange={handlerChangeInput}/>
            </div>

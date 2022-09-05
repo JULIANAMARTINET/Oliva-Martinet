@@ -1,6 +1,7 @@
 import ItemDetail from "../components/ItemDetail";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from 'react-toastify';
 import { CircularProgress } from '@mui/material';
 import { db }  from "../firebase"
 import { collection, getDoc, doc} from "firebase/firestore"
@@ -23,7 +24,9 @@ function ItemDetailContainer() {
         setLoading(true)
       })
       .catch((err) => {
-        console.log(err)
+        toast.error('Se produjo un error, intenta mas tarde', {
+          position: "top-right",
+          });
       })
 
   }, [id] );
