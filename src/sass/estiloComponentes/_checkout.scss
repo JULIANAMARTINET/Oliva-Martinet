@@ -6,6 +6,8 @@
         font-size: 2em;
         text-align: center;
         margin-top: 2em;
+        font-weight: 200;
+        color: darken(#c6b497, 40%);
     }
 
     .form {
@@ -25,13 +27,19 @@
 
         .itemForm {
             margin: 0em 1em;
-        }
+        }  
+
+       .dirrecion{
+           width: 100%;
+           text-align: center;
+       }
 
         input {
             margin: 0.5em 0em;
             padding: 0.5em 1em;
             background-color: transparent;
             border-bottom: 1px solid rgb(117, 112, 112);
+            
         }
     }
 

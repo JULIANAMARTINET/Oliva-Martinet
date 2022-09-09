@@ -17,7 +17,7 @@ const Aboutus = () => {
               <div className="imgAbout lg:w-1/3 md:w-1/3">
                   <img src={"/img/aboutus.png"} alt="" />
               </div>
-      </section>
+     </section>
     );
   };
   

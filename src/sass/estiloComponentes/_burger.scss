@@ -1,0 +1,22 @@
+
+.burger{
+    width: 2rem;
+    height: 2rem;
+    display: none;
+    z-index: 20;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+
+    @media screen and (max-width: 768px){
+        display: flex;
+        justify-content: space-around;
+        flex-flow: column nowrap;
+    }
+div{
+    background-color: #c6b497;
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+}
+}

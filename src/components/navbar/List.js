@@ -1,32 +1,12 @@
-import Bolsa from "./CartWidget";
+import Bolsa from "../CartWidget";
 import { Link } from "react-router-dom";
 
+  const List = ({open}) => {
 
-const NavBar = ({ type }) => {
- 
- 
   return (
-    <div className="navbar">
-      <div className="textNavbar md:flex items-center justify-between">
-        <div
-          className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
-        text-gray-800"
-        >
-          <span className="text-3xl text-indigo-600 mr-1 pt-2">
-            <div>
-              <Link to="/">
-                <img
-                  className="logo"
-                  src="/img/logo.png"
-                  alt="logo oliva"
-                />
-              </Link>
-            </div>
-          </span>
-        </div>
-        <ul
-          className="menu md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in"
-        >
+     <ul open={open}
+          className={`menu md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in"
+          ${open ? 'active' : ''}`}>
             <li className="md:ml-8 text-xl md:my-0 my-7">
               <Link to="/aboutus" className="text-gray-800 hover:text-gray-400 duration-500">Sobre oliva</Link></li>
             <li className="md:ml-8 text-xl md:my-0 my-7 relative">
@@ -42,10 +22,8 @@ const NavBar = ({ type }) => {
               <Bolsa />
             </Link>
           </li>
-        </ul>
-      </div>
-    </div>
-  );
+     </ul>
+  )
 };
 
-export default NavBar;
+export default List;

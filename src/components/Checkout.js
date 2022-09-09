@@ -108,9 +108,9 @@ else {
                    <input placeholder="ej: maria@gmail.com" name="email" value={cliente.email} onChange={handlerChangeInput}/>
                 </div>
            </div>
-           <div className="itemForm">
-               <h3>Dirección de envío</h3>
-               <input name="direccion" value={cliente.direccion} onChange={handlerChangeInput}/>
+               <div className="dirrecion">
+                 <h3>Dirección de envío</h3>
+                 <input className="w-1/2" name="direccion" value={cliente.direccion} onChange={handlerChangeInput}/>
            </div>
            <button type="submit" className="button">Confirmar Compra</button>
       </form>

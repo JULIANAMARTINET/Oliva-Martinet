@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 function Cart() {
   const { cart, eliminarItem, vaciarBolsa, precioTotal } = useCarrito();
 
-
   if (cart.length > 0) {
     return (
       <div className="containerCarrito">
@@ -12,7 +11,6 @@ function Cart() {
          {cart.map((element, index) => {
             return (  
              <article key={index} className="cart">
-
                    <div className="imgCarrito">
                        <img src={element.img} alt={element.name} />
                    </div>
@@ -36,7 +34,7 @@ function Cart() {
                     </Link>
                 </div>
            </section>
-      </div>
+       </div>
     );
   }
 

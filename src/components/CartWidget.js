@@ -9,7 +9,7 @@ const Bolsa = () => {
     <div>
          <Badge badgeContent={cantUn()} color="primary">
            <span>
-              <img className="bolsa_icono" src="/icono/bolsa-compras.png" alt="bolsa de compras" />
+              <img className="bolsaIcono" src="/icono/bolsa-compras.png" alt="bolsa de compras" />
            </span>
          </Badge>
      </div>
