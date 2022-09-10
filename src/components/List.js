@@ -1,4 +1,4 @@
-import Bolsa from "../CartWidget";
+import Bolsa from "./CartWidget";
 import { Link } from "react-router-dom";
 
   const List = ({open}) => {
