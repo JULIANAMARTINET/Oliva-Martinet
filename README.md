@@ -1,9 +1,9 @@
 # OLIVA HOME
 
-Oliva es un proyecto que nace del deseo de realzar los espacios que nos rodean y darle vida. Ofrece productos de telas 100% algodón, sensibles al tacto, que no necesitan planchado.
+Oliva es una aplicacion que nos permite acceder a un catálogo de productos de telas y accesorios de decoracion para el hogar. Este proyecto nace del deseo de realzar los espacios que nos rodean y darle vida. Ofrece productos de telas 100% algodón, sensibles al tacto, que no necesitan planchado.
 
-Link del proyecto https://oliva-martinet.vercel.app/
+Pagina desarrollada por Juliana Martinet utilizando React.js. Link del proyecto https://oliva-martinet.vercel.app/
 
-El e-commerce cuenta con una portada principal donde se muestran los productos destacados y desde el Navbar en item TIENDA podras ver todos los productos o incluso navegar por categorias. Ademas se muestra el detalle de cada producto desde el boton ver detalle y la posibilidad de agregarlo al carrito (cantidades según stock)
+La plataforma cuenta con una portada principal donde ademas se muestran los productos destacados. Desde el Navbar, en item TIENDA, se desplega una colección de productos almacenada en Firestore, incluso se puede navegar por categorias. El usuario podrá elegir que y cuantos productos agregar a su carrito de compras, ver su detalle, y finalizar su orden al rellenar un formulario con sus datos personales.
+La orden es almacenada en Firestore, proveyéndole al usuario su número de seguimiento.
 
-Desde el icono de BOLSA, en el margen superior izquierdo, podras ver los productos del carrito y realizar desde ahi la compra de los productos.
