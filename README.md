@@ -8,6 +8,7 @@ La plataforma cuenta con una portada principal donde ademas se muestran los prod
 La orden es almacenada en Firestore, proveyéndole al usuario su número de seguimiento.
 
 
-[website]: https://drive.google.com/file/d/1zfzVBGGdO723rMkb94XrwUsuET_Singg/preview
 
 
+
+[Video web.webm](https://user-images.githubusercontent.com/103047921/189556123-162a7c01-5c9e-4027-940e-ec0f759b255a.webm)
