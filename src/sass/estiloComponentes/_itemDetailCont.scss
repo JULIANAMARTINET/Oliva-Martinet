@@ -12,6 +12,10 @@
             font-size: 3em;
             font-weight: 200;
             border-bottom: 1px solid gray;
+            text-align: center;
+            @media screen and (max-width: 750px) {
+                font-size: 2em;
+            }
         }
 
         .row {
@@ -20,7 +24,6 @@
 
             @media screen and (max-width: 750px) {
                 flex-direction: column;
-
             }
 
             .column {

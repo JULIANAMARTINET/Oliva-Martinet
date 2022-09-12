@@ -5,55 +5,98 @@
     align-items: center;
     flex-direction: column;
 
-    .titCarrito{
+    .titCarrito {
         font-size: 3em;
         font-weight: 200;
         margin: 1em;
         color: darken(#c6b497, 40%);
-        border-bottom: solid 1px ;
-    }
-.cart {
-    margin: 1em;
-    border-radius: 10px;
-    border: 1px solid rgb(117, 112, 112);
-    padding: 1em 4em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 800px;
+        border-bottom: solid 1px;
 
-    .imgCarrito{
-        padding: 1em;
-        width: 150px
+        @media screen and (max-width: 576px) {
+            font-size: 2em;
+        }
     }
-    .titItem{
-        font-size: 1.8em;
-        font-weight: 300;
-        text-align: center;
-        margin: 0.8em;
-        border-bottom: 1px solid rgb(117, 112, 112);
+
+    .cart {
+        margin: 1em;
+        border-radius: 10px;
+        border: 1px solid rgb(117, 112, 112);
+        padding: 1em 4em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 800px;
+
+        @media screen and (max-width: 776px) {
+            width: 90%;
+            padding: 1em;
+        }
+
+        .imgCarrito {
+            padding: 1em;
+            width: 150px;
+            border-radius: 10px;
+
+            @media screen and (max-width: 776px) {
+                width: 80%;
+                padding: 0.5em;
+            }
+
+            img {
+                border-radius: 5px;
+                width: 100%;
+            }
+        }
+
+        .titItem {
+            font-size: 1.8em;
+            font-weight: 300;
+            text-align: center;
+            margin: 0.8em;
+            border-bottom: 1px solid rgb(117, 112, 112);
+
+            @media screen and (max-width: 776px) {
+                font-size: 1em;
+                font-weight: 500;
+            }
+        }
+
+        p {
+            text-align: center;
+
+            @media screen and (max-width: 776px) {
+                font-size: 1em;
+            }
+        }
     }
-    p{
-        text-align: center;
-    }
-}
-.precioTotal{
+
+    .precioTotal {
         font-size: 1.8em;
         font-weight: 300;
         text-align: end;
         margin: 0.8em;
         border-bottom: 1px solid rgb(117, 112, 112);
-}
 
-.botonesCarrito{
-    display: flex;
-    justify-content: center
+        @media screen and (max-width: 776px) {
+            font-size: 1.5em;
+        }
+    }
 
-}
-.button{
-    @extend %boton;  
-   }
-   p{
-       font-size: 1.2em;
-   }
+    .botonesCarrito {
+        display: flex;
+        justify-content: center
+    }
+
+    .button {
+        @extend %boton;
+
+        @media screen and (max-width: 776px) {
+            font-size: 1em;
+            font-weight: 400;
+        }
+    }
+
+    p {
+        font-size: 1.2em;
+    }
 }

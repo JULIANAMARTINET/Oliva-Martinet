@@ -11,15 +11,15 @@ function Cart() {
          {cart.map((element, index) => {
             return (  
              <article key={index} className="cart">
-                   <div className="imgCarrito">
+                   <div className="imgCarrito w-2/5">
                        <img src={element.img} alt={element.name} />
                    </div>
-                   <div>
+                   <div className="w-3/5">
                        <h3 className="titItem">{element.nombre}</h3>
                        <p>Precio: ${element.precio}</p>
                        <p>Cantidad: {element.cantidad}</p>
                    </div>
-                   <div>
+                   <div className="w-1/5">
                        <button className="button" onClick={() => eliminarItem(element.id)}> X
                        </button>
                    </div>
@@ -45,7 +45,7 @@ function Cart() {
             <Link to="/">
                 <button className="button">Volver a la home</button>
             </Link>
-      </div>
+        </div>
   );
 }
 

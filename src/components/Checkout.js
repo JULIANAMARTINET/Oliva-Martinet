@@ -64,7 +64,6 @@ export const Checkout = () => {
                     <p>Nombre: {cliente.nombre}</p>
                     <p>Apellido: {cliente.apellido}</p>
                     <p>Dirreccion de envio: {cliente.direccion}</p>
-                    <p>Monto a pagar: ${precioTotal()}</p> 
                  </div>
                  <Link to="/"><button className="button">Volver a la Home</button></Link>
             </div>
@@ -110,7 +109,7 @@ else {
            </div>
                <div className="dirrecion">
                  <h3>Dirección de envío</h3>
-                 <input className="w-1/2" name="direccion" value={cliente.direccion} onChange={handlerChangeInput}/>
+                 <input className="lg:w-1/2 md:w-full" name="direccion" value={cliente.direccion} onChange={handlerChangeInput}/>
            </div>
            <button type="submit" className="button">Confirmar Compra</button>
       </form>
