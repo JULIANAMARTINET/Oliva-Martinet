@@ -23,6 +23,4 @@ Link del proyecto https://oliva-martinet.vercel.app/
 
 ## Instalación
 
-Descargar Zip
-npm install
-npm start
+<img width="832" alt="Captura de Pantalla 2022-09-11 a la(s) 21 50 15" src="https://user-images.githubusercontent.com/103047921/189556903-f7da7d71-866f-4395-9a51-1c0e50819f4b.png">
