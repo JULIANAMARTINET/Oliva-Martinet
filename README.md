@@ -6,13 +6,13 @@ Oliva es una aplicacion que nos permite acceder a un catálogo de productos de t
 
 Pagina desarrollada por Juliana Martinet utilizando React.js. 
 
-## Herramienta de desarrollo
+## Herramientas de desarrollo
 
 Create React App React Router, Firestore, Tailwindcss, Material UI, Toastify.
 
 ## Funcionalidad
 
-La plataforma cuenta con una portada principal donde ademas se muestran los productos destacados. Desde el Navbar, en item TIENDA, se desplega una colección de productos almacenada en Firestore, incluso se puede navegar por categorias. El usuario podrá elegir que y cuantos productos agregar a su carrito de compras, ver su detalle, y finalizar su orden al rellenar un formulario con sus datos personales.
+La plataforma cuenta con una portada principal donde ademas se muestran los productos destacados. En TIENDA, se desplega una colección de productos almacenada en Firestore, incluso se puede navegar por categorias. El usuario podrá elegir que y cuantos productos agregar a su carrito de compras, ver su detalle, y finalizar su orden al rellenar un formulario con sus datos personales.
 La orden es almacenada en Firestore, proveyéndole al usuario su número de seguimiento.
 
 ## OLIVA HOME
