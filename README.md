@@ -8,6 +8,6 @@ La plataforma cuenta con una portada principal donde ademas se muestran los prod
 La orden es almacenada en Firestore, proveyéndole al usuario su número de seguimiento.
 
 
-<iframe src="file:///Users/julianamartinet/Documents/ReactJS/oliva-martinet/Video%20web.webm" width="640" height="480"> </iframe>
+[website]: https://drive.google.com/file/d/1zfzVBGGdO723rMkb94XrwUsuET_Singg/preview
 
 
