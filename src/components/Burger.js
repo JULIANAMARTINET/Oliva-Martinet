@@ -6,13 +6,13 @@ import List from "./List";
 
   return (
     <>
-      <div className="burger" open={open} onClick={() => setOpen(!open)}>
-         <div></div>
-         <div></div>
-         <div></div>
-     </div>
-     <List open={open}/>
-   </>
+       <div className="burger" open={open} onClick={() => setOpen(!open)}>
+          <div></div>
+          <div></div>
+          <div></div>
+       </div>
+       <List open={open}/>
+    </>
   );
 };
 

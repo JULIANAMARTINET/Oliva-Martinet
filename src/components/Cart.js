@@ -6,7 +6,7 @@ function Cart() {
 
   if (cart.length > 0) {
     return (
-      <div className="containerCarrito">
+    <div className="containerCarrito">
         <h2 className="titCarrito">Mi bolsa de compras</h2>
          {cart.map((element, index) => {
             return (  
@@ -34,7 +34,7 @@ function Cart() {
                     </Link>
                 </div>
            </section>
-       </div>
+    </div>
     );
   }
 

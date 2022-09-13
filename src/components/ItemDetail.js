@@ -28,20 +28,20 @@ const ItemDetail = ({ detail }) => {
 
   return (
     <section className="cardDetail">
-      <h3>{detail.nombre}</h3>
-      <div className="row">
-        <div className="column lg:w-1/2 md:w-2/2">
-          <img src={detail.img} alt="producto" />
-        </div>
-        <div className="column lg:w-1/2 md:w-2/2">
-          <p className="textDetail">{detail.detalle}</p>
-          <p className="medidaDetail">
-            Medidas {detail.medida}
-          </p>
-          <p className="precioDetail">$ {detail.precio}</p>
-          <Contador stock={5} cantidad={cantidad} setCantidad={setCantidad} onAdd={onAdd} />
-        </div>
-      </div>
+         <h3>{detail.nombre}</h3>
+         <div className="row">
+              <div className="column lg:w-1/2 md:w-2/2">
+                   <img src={detail.img} alt="producto" />
+              </div>
+              <div className="column lg:w-1/2 md:w-2/2">
+                   <p className="textDetail">{detail.detalle}</p>
+                   <p className="medidaDetail">
+                     Medidas {detail.medida}
+                   </p>
+                   <p className="precioDetail">$ {detail.precio}</p>
+                   <Contador stock={5} cantidad={cantidad} setCantidad={setCantidad} onAdd={onAdd} />
+              </div>
+         </div>
     </section>
   );
 };

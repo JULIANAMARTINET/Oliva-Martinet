@@ -55,7 +55,7 @@ export const Checkout = () => {
   if ((cart.length === 0) && (submit)) {
     
      return (
-             <div className="containerEnvio"> 
+            <div className="containerEnvio"> 
                  <h3 className="titEnvio">Su orden fue cargada con exito! </h3>
                  <p>Revise su casilla de correo {cliente.email}, para proceder al pago.</p>
                  <div className="detalleEnvio">

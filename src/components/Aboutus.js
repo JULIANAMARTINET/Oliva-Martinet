@@ -15,9 +15,9 @@ const Aboutus = () => {
                    </div>
               </div>
               <div className="imgAbout lg:w-1/3 md:w-1/3">
-                  <img src={"/img/aboutus.png"} alt="" />
+                  <img src={"/img/aboutus.png"} alt="Lugar de Trabajo" />
               </div>
-     </section>
+       </section>
     );
   };
   

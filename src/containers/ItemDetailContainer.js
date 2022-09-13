@@ -28,22 +28,19 @@ function ItemDetailContainer() {
           position: "top-right",
           });
       })
-
   }, [id] );
 
   return (  
-     <> 
-       {loading?
-         <div className="itemDetailContainer">
-           <ItemDetail detail={detail} />
-         </div>
+      <> 
+         {loading?
+           <div className="itemDetailContainer">
+              <ItemDetail detail={detail} />
+           </div>
          :
-                 <div className='text-center'>
-                     <CircularProgress color="inherit" />
-                 </div>
-     
-        }     
+            <div className='text-center'>
+              <CircularProgress color="inherit" />
+            </div>}     
       </> 
-   );}
+   )}
 
 export default ItemDetailContainer;

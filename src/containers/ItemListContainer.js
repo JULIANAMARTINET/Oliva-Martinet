@@ -49,8 +49,8 @@ function ItemListContainer() {
 
   return (
     <div className="itemListCont">
-      {!loading && <CircularProgress color="inherit" />}
-      {loading && <ItemList listProductos={listProductos} />}
+        {!loading && <CircularProgress color="inherit" />}
+        {loading && <ItemList listProductos={listProductos} />}
     </div>
   );
 }
